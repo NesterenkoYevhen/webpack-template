@@ -84,6 +84,7 @@ export default [
       "lines-between-class-members": ["error", "always"],
       "object-curly-spacing": ["error", "always"],
       "array-bracket-spacing": ["error", "never"],
+      "linebreak-style": "off",
 
       // TypeScript
       "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
