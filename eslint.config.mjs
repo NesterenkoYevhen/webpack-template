@@ -68,7 +68,7 @@ export default [
     },
     rules: {
       // Применение правил Prettier
-      "prettier/prettier": "error",
+      "prettier/prettier": "warn",
 
       // General rules
       "no-console": ["warn", { allow: ["warn", "error"] }],
