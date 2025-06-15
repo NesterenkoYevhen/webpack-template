@@ -20,7 +20,7 @@ export default [
       '**/*.test.*',
       '**/__tests__/**',
       'webpack/',
-      ".prettierrc.js"
+      ".prettierrc.js",
     ],
   },
   js.configs.recommended,
@@ -31,9 +31,9 @@ export default [
       parser: tsParser,
       parserOptions: {
         ecmaFeatures: { jsx: true },
-        ecmaVersion: "latest",
-        sourceType: "module",
-        project: "./tsconfig.json"
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: './tsconfig.app.json',
       },
       globals: {
         ...globals.browser,
@@ -45,8 +45,8 @@ export default [
         version: "detect"
       },
       "import/resolver": {
-        node: {
-          extensions: [".js", ".jsx", ".ts", ".tsx", ".json"]
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
         },
         typescript: {
           project: "./tsconfig.json"
@@ -67,8 +67,13 @@ export default [
       "prettier": prettierPlugin
     },
     rules: {
-      // Применение правил Prettier
-      "prettier/prettier": "warn",
+      // Prettier
+      "prettier/prettier": [
+        "warn",
+        {
+          "endOfLine": "auto"
+        }
+      ],
 
       // General rules
       "no-console": ["warn", { allow: ["warn", "error"] }],
@@ -113,19 +118,9 @@ export default [
       "jsx-a11y/anchor-is-valid": "error",
 
       // Imports
-      "import/no-unresolved": ["error"],
       "import/named": "off",
       "import/namespace": "off",
       "import/default": "off",
-      "import/no-duplicates": "error",
-      "import/order": [
-        "error",
-        {
-          groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
-          "newlines-between": "always",
-          alphabetize: { order: "asc", caseInsensitive: true }
-        }
-      ],
 
       // Security
       "security/detect-object-injection": "warn",

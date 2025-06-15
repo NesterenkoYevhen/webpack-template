@@ -1,7 +1,6 @@
+import { RouterProvider } from 'react-router-dom'
+import { router } from './router/router'
+
 export const App = () => {
-  return (
-    <h1>
-      Edited React TypeScript Webpack Starter Template - {process.env.APP_ENV}
-    </h1>
-  )
+  return <RouterProvider router={router} />
 }
